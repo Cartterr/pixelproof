@@ -1,0 +1,16 @@
+[sender] pattern 960x540@60 | codec=raw 960x540@60 -> 192.168.88.226:5004 (bind 192.168.88.11)
+[sender] pipeline: appsrc name=patsrc is-live=true format=time do-timestamp=true block=false max-buffers=2 leaky-type=downstream caps=video/x-raw,format=RGB,width=960,height=540,framerate=60/1,colorimetry=sRGB,pixel-aspect-ratio=1/1 ! videoconvert n-threads=4 ! videoscale ! capsfilter name=fmt caps="video/x-raw,format=RGB,width=960,height=540,framerate=60/1,pixel-aspect-ratio=1/1" ! tee name=t t. ! queue name=sq leaky=downstream max-size-buffers=2 max-size-bytes=0 max-size-time=0 ! rtpvrawpay name=pay pt=96 mtu=1400 ! udpsink name=net host=192.168.88.226 port=5004 sync=false async=false qos=false buffer-size=2097152 bind-address=192.168.88.11
+[sender] warm in=58/s sent=9/s qdrop=49 rtp=109.0 Mb/s cpu=108%(1core) sys=20% sync=±0.465ms rtt=0.852ms
+[sender] warm in=61/s sent=8/s qdrop=53 rtp=95.9 Mb/s cpu=46%(1core) sys=17% sync=±0.485ms rtt=0.852ms
+[sender] warm in=61/s sent=7/s qdrop=54 rtp=98.5 Mb/s cpu=23%(1core) sys=20% sync=±0.506ms rtt=0.852ms
+[sender] MEAS in=60/s sent=8/s qdrop=52 rtp=95.1 Mb/s cpu=22%(1core) sys=20% sync=±0.526ms rtt=0.852ms
+[sender] MEAS in=60/s sent=8/s qdrop=52 rtp=95.9 Mb/s cpu=11%(1core) sys=18% sync=±0.546ms rtt=0.852ms
+[sender] MEAS in=59/s sent=7/s qdrop=52 rtp=95.1 Mb/s cpu=13%(1core) sys=22% sync=±0.566ms rtt=0.852ms
+[sender] MEAS in=60/s sent=8/s qdrop=52 rtp=94.6 Mb/s cpu=16%(1core) sys=24% sync=±0.586ms rtt=0.852ms
+[sender] MEAS in=60/s sent=7/s qdrop=53 rtp=96.4 Mb/s cpu=17%(1core) sys=15% sync=±0.606ms rtt=0.852ms
+[sender] MEAS in=60/s sent=8/s qdrop=52 rtp=94.6 Mb/s cpu=22%(1core) sys=20% sync=±0.625ms rtt=0.852ms
+[sender] MEAS in=56/s sent=7/s qdrop=49 rtp=96.4 Mb/s cpu=15%(1core) sys=31% sync=±0.646ms rtt=0.852ms
+[sender] MEAS in=60/s sent=8/s qdrop=52 rtp=94.6 Mb/s cpu=13%(1core) sys=15% sync=±0.666ms rtt=0.852ms
+[sender] MEAS in=60/s sent=7/s qdrop=53 rtp=95.1 Mb/s cpu=8%(1core) sys=17% sync=±0.686ms rtt=0.852ms
+[sender] MEAS in=60/s sent=8/s qdrop=52 rtp=95.9 Mb/s cpu=16%(1core) sys=18% sync=±0.706ms rtt=0.852ms
+[sender] SUMMARY measured 10s: stamped=598 sent=76 (7.60 fps) queue_drops=522 payload=94.6 Mb/s rtp=96.1 Mb/s wire~100.6 Mb/s encode/queue->pay med=0.11ms p95=0.17ms cpu=16%(1core) sync_unc=±0.710ms drift=0.00ppm

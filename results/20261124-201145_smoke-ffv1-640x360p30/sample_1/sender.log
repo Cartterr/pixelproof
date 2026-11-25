@@ -1,0 +1,9 @@
+[sender] pattern 640x360@30 | codec=ffv1 640x360@30 -> 192.168.88.226:5004 (bind 192.168.88.11)
+[sender] pipeline: appsrc name=patsrc is-live=true format=time do-timestamp=true block=false max-buffers=2 leaky-type=downstream caps=video/x-raw,format=RGB,width=640,height=360,framerate=30/1,colorimetry=sRGB,pixel-aspect-ratio=1/1 ! videoconvert n-threads=4 ! videoscale ! capsfilter name=fmt caps="video/x-raw,format=RGB,width=640,height=360,framerate=30/1,pixel-aspect-ratio=1/1" ! tee name=t t. ! queue name=sq leaky=downstream max-size-buffers=2 max-size-bytes=0 max-size-time=0 ! videoconvert name=qout ! video/x-raw,format=BGRx ! avenc_ffv1 name=enc gop-size=1 context=0 thread-type=slice slicecrc=on coder=rice slices=16 threads=0 ! rtpgstpay name=pay config-interval=1 mtu=1400 ! udpsink name=net host=192.168.88.226 port=5004 sync=false async=false qos=false buffer-size=8388608 bind-address=192.168.88.11
+[sender] warm in=29/s sent=29/s qdrop=0 rtp=27.2 Mb/s cpu=101%(1core) sys=28% sync=±0.428ms rtt=0.816ms
+[sender] warm in=30/s sent=30/s qdrop=0 rtp=28.2 Mb/s cpu=43%(1core) sys=17% sync=±0.487ms rtt=0.807ms
+[sender] MEAS in=31/s sent=31/s qdrop=0 rtp=29.1 Mb/s cpu=11%(1core) sys=17% sync=±0.491ms rtt=0.807ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=28.2 Mb/s cpu=42%(1core) sys=17% sync=±0.499ms rtt=0.792ms
+[sender] MEAS in=30/s sent=29/s qdrop=1 rtp=27.3 Mb/s cpu=0%(1core) sys=15% sync=±0.498ms rtt=0.792ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=28.3 Mb/s cpu=31%(1core) sys=24% sync=±0.503ms rtt=0.792ms
+[sender] SUMMARY measured 4s: stamped=121 sent=121 (30.25 fps) queue_drops=0 payload=28.0 Mb/s rtp=28.5 Mb/s wire~29.8 Mb/s encode/queue->pay med=0.92ms p95=1.06ms cpu=21%(1core) sync_unc=±0.503ms drift=-8.23ppm

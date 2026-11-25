@@ -1,0 +1,13 @@
+[receiver] mode=raw path=app 320x180@30 bind=192.168.88.226:5004 display=none
+[receiver] pipeline: udpsrc name=src port=5004 buffer-size=33554432 do-timestamp=true address=192.168.88.226 caps=application/x-rtp ! appsink name=rtpsink sync=false async=false emit-signals=false max-buffers=0 drop=false
+
+[receiver] warm ok=0/s bad=0 pkts=0 lost=0 rtp=0.0 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=1%(1core) sys=11%
+[receiver] warm ok=0/s bad=0 pkts=0 lost=0 rtp=0.0 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=0%(1core) sys=7%
+[receiver] warm ok=0/s bad=0 pkts=3678 lost=0 rtp=41.2 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=4%(1core) sys=10%
+[receiver] warm ok=0/s bad=0 pkts=3418 lost=0 rtp=38.3 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=4%(1core) sys=7%
+[receiver] MEAS ok=28/s bad=0 pkts=3740 lost=0 rtp=41.9 Mb/s lat(pay->rx) med=15.27ms p95=15.63ms disp=0/s q=0 cpu=6%(1core) sys=14%
+[receiver] MEAS ok=3/s bad=0 pkts=378 lost=0 rtp=4.2 Mb/s lat(pay->rx) med=15.30ms p95=15.33ms disp=0/s q=0 cpu=0%(1core) sys=7%
+[receiver] MEAS ok=19/s bad=0 pkts=2394 lost=0 rtp=26.8 Mb/s lat(pay->rx) med=15.28ms p95=15.59ms disp=0/s q=0 cpu=4%(1core) sys=14%
+[receiver] MEAS ok=29/s bad=0 pkts=3654 lost=0 rtp=40.9 Mb/s lat(pay->rx) med=15.24ms p95=15.31ms disp=0/s q=0 cpu=5%(1core) sys=11%
+[receiver] MEAS ok=6/s bad=0 pkts=756 lost=0 rtp=8.5 Mb/s lat(pay->rx) med=15.23ms p95=15.30ms disp=0/s q=0 cpu=1%(1core) sys=14%
+[receiver] SUMMARY expected=85 ok=85 corrupted=0 incomplete=0 never_arrived=0 rx_dropped=0 dup=0 stamp_bad=0 unknown=0 | ok fps=21.25 | pkts=18018 lost=0 | pay->complete med=15.27 p95=15.37 ms (sync ±0.544) | decode med=0.00 p95=0.00 ms | cpu=5%(1core) sys=12%

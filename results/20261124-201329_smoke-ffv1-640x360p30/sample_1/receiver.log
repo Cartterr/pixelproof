@@ -1,0 +1,12 @@
+[receiver] mode=ffv1 path=gst 640x360@30 bind=192.168.88.226:5004 display=none
+[receiver] pipeline: udpsrc name=src port=5004 buffer-size=33554432 do-timestamp=true address=192.168.88.226 caps="application/x-rtp,media=application,clock-rate=90000,encoding-name=X-GST,payload=96" ! rtpgstdepay name=depay ! queue name=decq leaky=downstream max-size-buffers=3 max-size-bytes=0 max-size-time=0 ! avdec_ffv1 name=dec thread-type=slice max-threads=4 ! tee name=t t. ! queue name=vq leaky=downstream max-size-buffers=3 max-size-bytes=0 max-size-time=0 ! appsink name=vsink sync=false async=false max-buffers=3 drop=true
+
+[receiver] warm ok=0/s bad=0 pkts=0 lost=0 rtp=0.0 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=0%(1core) sys=12%
+[receiver] warm ok=0/s bad=0 pkts=1856 lost=0 rtp=20.6 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=18%(1core) sys=9%
+[receiver] warm ok=0/s bad=0 pkts=2527 lost=0 rtp=28.1 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=27%(1core) sys=15%
+[receiver] MEAS ok=21/s bad=0 pkts=2539 lost=0 rtp=28.2 Mb/s lat(pay->rx) med=10.49ms p95=10.75ms disp=0/s q=0 cpu=27%(1core) sys=15%
+[receiver] MEAS ok=29/s bad=0 pkts=2461 lost=0 rtp=27.4 Mb/s lat(pay->rx) med=10.67ms p95=10.84ms disp=0/s q=0 cpu=27%(1core) sys=19%
+[receiver] MEAS ok=30/s bad=0 pkts=2528 lost=0 rtp=28.1 Mb/s lat(pay->rx) med=10.62ms p95=10.78ms disp=0/s q=0 cpu=29%(1core) sys=14%
+[receiver] MEAS ok=30/s bad=0 pkts=2609 lost=0 rtp=29.0 Mb/s lat(pay->rx) med=10.74ms p95=25.30ms disp=0/s q=0 cpu=27%(1core) sys=17%
+[receiver] MEAS ok=11/s bad=0 pkts=869 lost=0 rtp=9.7 Mb/s lat(pay->rx) med=10.59ms p95=10.81ms disp=0/s q=0 cpu=11%(1core) sys=10%
+[receiver] SUMMARY expected=121 ok=121 corrupted=0 incomplete=0 never_arrived=0 rx_dropped=0 dup=0 stamp_bad=0 unknown=0 | ok fps=30.25 | pkts=15389 lost=0 | pay->complete med=10.64 p95=11.81 ms (sync ±0.493) | decode med=2.15 p95=3.73 ms | cpu=27%(1core) sys=16%

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330">
+  <defs>
+    <pattern id="px" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#0f1115"/>
+      <rect width="1" height="1" fill="#1b1f27"/>
+    </pattern>
+  </defs>
+  <rect width="880" height="330" rx="18" fill="url(#px)"/>
+  <rect x="0.5" y="0.5" width="879" height="329" rx="18" fill="none" stroke="#262a33"/>
+  <!-- left: the "wire" -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <rect x="36" y="40" width="150" height="96" rx="10" fill="#161a21" stroke="#2d323c"/>
+    <text x="111" y="78" fill="#e8e8e8" font-size="15" text-anchor="middle">Windows</text>
+    <text x="111" y="100" fill="#8a8f98" font-size="12" text-anchor="middle">hash RGB</text>
+    <text x="111" y="118" fill="#8a8f98" font-size="12" text-anchor="middle">before the wire</text>
+    <rect x="36" y="196" width="150" height="96" rx="10" fill="#161a21" stroke="#2d323c"/>
+    <text x="111" y="234" fill="#e8e8e8" font-size="15" text-anchor="middle">Raspberry Pi 5</text>
+    <text x="111" y="256" fill="#8a8f98" font-size="12" text-anchor="middle">hash RGB</text>
+    <text x="111" y="274" fill="#8a8f98" font-size="12" text-anchor="middle">after the wire</text>
+    <g fill="#3ddc84">
+      <rect x="107" y="146" width="8" height="8"/><rect x="107" y="160" width="8" height="8" opacity="0.8"/>
+      <rect x="107" y="174" width="8" height="8" opacity="0.6"/>
+    </g>
+    <text x="128" y="172" fill="#3ddc84" font-size="13">== ✓</text>
+  </g>
+  <!-- right: name + numbers -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="236" y="86" fill="#f2f2f2" font-size="46" font-weight="700" letter-spacing="-1">PixelProof</text>
+    <text x="238" y="116" fill="#8a8f98" font-size="17">Stream a desktop to a Raspberry Pi 5. Prove every pixel made it.</text>
+    <g font-size="15" fill="#e8e8e8">
+      <text x="238" y="170"><tspan fill="#3ddc84" font-weight="700">20,844</tspan> frames verified bit-exact · <tspan fill="#3ddc84" font-weight="700">0</tspan> corrupted · <tspan fill="#3ddc84" font-weight="700">0</tspan> packets lost</text>
+      <text x="238" y="202"><tspan fill="#4ea1ff" font-weight="700">14.3 ms</tspan> laptop → Pi, raw RGB 960×540 at a locked 60 fps (≈ 795 Mb/s)</text>
+      <text x="238" y="234"><tspan fill="#f5b041" font-weight="700">32–54 ms</tspan> lossless FFV1 at 1080p30, decoder-bound on the Pi</text>
+    </g>
+    <text x="238" y="284" fill="#5f6570" font-size="12">C++ · GStreamer 1.28 / 1.26 · RTP RFC 4175 · XXH64 per frame · clock-synced to &lt;±1 ms · gigabit, direct cable</text>
+  </g>
+</svg>

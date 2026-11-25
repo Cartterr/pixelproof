@@ -1,0 +1,9 @@
+[sender] desktop monitor 0 via dxgi | codec=raw 320x180@30 -> 192.168.88.226:5004 (bind 192.168.88.11)
+[sender] pipeline: d3d11screencapturesrc name=cap monitor-index=0 show-cursor=true capture-api=dxgi ! video/x-raw(memory:D3D11Memory),framerate=30/1 ! d3d11convert ! video/x-raw(memory:D3D11Memory),format=RGBA,width=320,height=180,pixel-aspect-ratio=1/1 ! d3d11download ! videoconvert n-threads=4 ! videoscale ! capsfilter name=fmt caps="video/x-raw,format=RGB,width=320,height=180,framerate=30/1,pixel-aspect-ratio=1/1" ! tee name=t t. ! queue name=sq leaky=downstream max-size-buffers=2 max-size-bytes=0 max-size-time=0 ! rtpvrawpay name=pay pt=96 mtu=1400 ! udpsink name=net host=192.168.88.226 port=5004 sync=false async=false qos=false buffer-size=8388608 bind-address=192.168.88.11
+[sender] warm in=30/s sent=30/s qdrop=0 rtp=42.3 Mb/s cpu=84%(1core) sys=29% sync=±0.409ms rtt=0.778ms
+[sender] warm in=27/s sent=27/s qdrop=0 rtp=38.1 Mb/s cpu=40%(1core) sys=25% sync=±0.428ms rtt=0.778ms
+[sender] MEAS in=29/s sent=29/s qdrop=0 rtp=40.9 Mb/s cpu=11%(1core) sys=33% sync=±0.440ms rtt=0.778ms
+[sender] MEAS in=3/s sent=3/s qdrop=0 rtp=4.2 Mb/s cpu=0%(1core) sys=22% sync=±0.475ms rtt=0.778ms
+[sender] MEAS in=19/s sent=19/s qdrop=0 rtp=26.8 Mb/s cpu=9%(1core) sys=26% sync=±0.462ms rtt=0.778ms
+[sender] MEAS in=31/s sent=31/s qdrop=0 rtp=43.7 Mb/s cpu=1%(1core) sys=18% sync=±0.468ms rtt=0.778ms
+[sender] SUMMARY measured 4s: stamped=85 sent=85 (21.25 fps) queue_drops=0 payload=29.4 Mb/s rtp=30.0 Mb/s wire~31.4 Mb/s encode/queue->pay med=0.03ms p95=0.03ms cpu=5%(1core) sync_unc=±0.476ms drift=-0.05ppm

@@ -1,0 +1,55 @@
+### route (Windows)
+InterfaceAlias    : Ethernet
+IPAddress         : 192.168.88.11
+DestinationPrefix : 
+NextHop           : 
+
+InterfaceAlias    : Ethernet
+IPAddress         : 
+DestinationPrefix : 192.168.88.0/24
+NextHop           : 0.0.0.0
+
+### adapter (Windows)
+Name                 : Ethernet
+InterfaceDescription : Realtek USB FE Family Controller
+Status               : Up
+LinkSpeed            : 100 Mbps
+DriverVersion        : 1152.17.20.1030
+
+### ping laptop -> Pi
+Pinging 192.168.88.226 from 192.168.88.11 with 32 bytes of data:
+Reply from 192.168.88.226: bytes=32 time=1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+Reply from 192.168.88.226: bytes=32 time<1ms TTL=64
+
+Ping statistics for 192.168.88.226:
+    Packets: Sent = 10, Received = 10, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+### Pi: link + route + ping Pi -> laptop
+192.168.88.11 dev eth0 src 192.168.88.226 uid 1000 
+    cache 
+--- 192.168.88.11 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9199ms
+rtt min/avg/max/mdev = 0.802/0.862/0.942/0.048 ms
+bash: line 1: ethtool: command not found
+
+### iperf3 TCP laptop -> Pi (10 s)
+[  5]   0.00-10.01  sec   114 MBytes  95.7 Mbits/sec                  sender
+[  5]   0.00-10.10  sec   114 MBytes  94.8 Mbits/sec                  receiver
+
+### iperf3 TCP Pi -> laptop (10 s)
+[  5]   0.00-10.01  sec   113 MBytes  94.8 Mbits/sec    0            sender
+[  5]   0.00-10.01  sec   113 MBytes  94.5 Mbits/sec                  receiver
+
+### iperf3 UDP laptop -> Pi 120 Mb/s, 1400 B (10 s)
+[  5]   0.00-10.01  sec   113 MBytes  95.0 Mbits/sec  0.000 ms  0/84982 (0%)  sender
+[  5]   0.00-10.02  sec   113 MBytes  95.0 Mbits/sec  0.173 ms  0/84981 (0%)  receiver

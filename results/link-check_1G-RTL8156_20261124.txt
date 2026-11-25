@@ -1,0 +1,58 @@
+### route (Windows)
+InterfaceAlias    : Ethernet 2
+IPAddress         : 10.77.0.1
+DestinationPrefix : 
+NextHop           : 
+
+InterfaceAlias    : Ethernet 2
+IPAddress         : 
+DestinationPrefix : 10.77.0.0/24
+NextHop           : 0.0.0.0
+
+### adapter (Windows)
+Name                 : Ethernet 2
+InterfaceDescription : Realtek Gaming USB 2.5GbE Family Controller
+Status               : Up
+LinkSpeed            : 1 Gbps
+DriverVersion        : 1156.17.20.1030
+
+### ping laptop -> Pi
+Pinging 10.77.0.2 from 10.77.0.1 with 32 bytes of data:
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+Reply from 10.77.0.2: bytes=32 time<1ms TTL=64
+
+Ping statistics for 10.77.0.2:
+    Packets: Sent = 10, Received = 10, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+### Pi: link + route + ping Pi -> laptop
+Speed: 1000Mb/s
+	Duplex: Full
+	Link detected: yes
+10.77.0.1 dev eth0 src 10.77.0.2 uid 1000 
+    cache 
+--- 10.77.0.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9223ms
+rtt min/avg/max/mdev = 0.322/0.368/0.453/0.039 ms
+netlink error: Operation not permitted
+
+### iperf3 TCP laptop -> Pi (10 s)
+[  5]   0.00-10.01  sec  1.11 GBytes   952 Mbits/sec                  sender
+[  5]   0.00-10.03  sec  1.11 GBytes   949 Mbits/sec                  receiver
+
+### iperf3 TCP Pi -> laptop (10 s)
+[  5]   0.00-10.00  sec  1.10 GBytes   945 Mbits/sec    0            sender
+[  5]   0.00-10.00  sec  1.10 GBytes   944 Mbits/sec                  receiver
+
+### iperf3 UDP laptop -> Pi 950 Mb/s, 1400 B (10 s)
+[  5]   0.00-10.00  sec  1.11 GBytes   949 Mbits/sec  0.000 ms  0/847850 (0%)  sender
+[  5]   0.00-10.00  sec  1.10 GBytes   948 Mbits/sec  0.020 ms  1121/847850 (0.13%)  receiver

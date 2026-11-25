@@ -1,0 +1,14 @@
+[receiver] mode=raw path=app 320x180@30 bind=192.168.88.226:5004 display=wayland
+[receiver] pipeline: udpsrc name=src port=5004 buffer-size=33554432 do-timestamp=true address=192.168.88.226 caps=application/x-rtp ! appsink name=rtpsink sync=false async=false emit-signals=false max-buffers=0 drop=false
+[receiver] display: appsrc name=dsrc is-live=true format=time do-timestamp=true block=false max-buffers=2 leaky-type=downstream caps=video/x-raw,format=RGB,width=320,height=180,framerate=30/1 ! queue leaky=downstream max-size-buffers=2 max-size-bytes=0 max-size-time=0 ! videoconvert ! waylandsink name=dsink sync=false fullscreen=true
+
+(sb_receiver:1148635): GStreamer-Wayland-CRITICAL **: 20:13:53.998: gst_wl_window_ensure_fullscreen: assertion 'self' failed
+[receiver] warm ok=0/s bad=0 pkts=0 lost=0 rtp=0.0 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=0%(1core) sys=11%
+[receiver] warm ok=0/s bad=0 pkts=2520 lost=0 rtp=28.2 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=20/s q=0 cpu=3%(1core) sys=9%
+[receiver] warm ok=0/s bad=0 pkts=3780 lost=0 rtp=42.3 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=30/s q=0 cpu=4%(1core) sys=8%
+[receiver] MEAS ok=19/s bad=0 pkts=3790 lost=0 rtp=42.4 Mb/s lat(pay->rx) med=15.28ms p95=15.34ms disp=30/s q=0 cpu=4%(1core) sys=6%
+[receiver] MEAS ok=30/s bad=0 pkts=3770 lost=0 rtp=42.2 Mb/s lat(pay->rx) med=15.28ms p95=15.33ms disp=30/s q=0 cpu=4%(1core) sys=6%
+[receiver] MEAS ok=30/s bad=0 pkts=3780 lost=0 rtp=42.3 Mb/s lat(pay->rx) med=15.27ms p95=15.33ms disp=30/s q=0 cpu=4%(1core) sys=5%
+[receiver] MEAS ok=30/s bad=0 pkts=3819 lost=0 rtp=42.7 Mb/s lat(pay->rx) med=15.27ms p95=15.33ms disp=30/s q=0 cpu=5%(1core) sys=8%
+[receiver] MEAS ok=12/s bad=0 pkts=1473 lost=0 rtp=16.5 Mb/s lat(pay->rx) med=15.29ms p95=15.35ms disp=12/s q=0 cpu=2%(1core) sys=7%
+[receiver] SUMMARY expected=121 ok=121 corrupted=0 incomplete=0 never_arrived=0 rx_dropped=0 dup=0 stamp_bad=0 unknown=0 | ok fps=30.25 | pkts=22932 lost=0 | pay->complete med=15.28 p95=15.34 ms (sync ±0.469) | decode med=0.00 p95=0.00 ms | cpu=4%(1core) sys=6%

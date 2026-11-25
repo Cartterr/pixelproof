@@ -1,0 +1,42 @@
+[receiver] mode=raw path=app 960x540@60 bind=10.77.0.2:5004 display=none
+[receiver] pipeline: udpsrc name=src port=5004 buffer-size=33554432 do-timestamp=true address=10.77.0.2 caps=application/x-rtp ! appsink name=rtpsink sync=false async=false emit-signals=false max-buffers=0 drop=false
+
+[receiver] warm ok=0/s bad=0 pkts=0 lost=0 rtp=0.0 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=0%(1core) sys=9%
+[receiver] warm ok=0/s bad=0 pkts=4520 lost=0 rtp=50.6 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=4%(1core) sys=13%
+[receiver] warm ok=0/s bad=0 pkts=48590 lost=0 rtp=543.8 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=40%(1core) sys=20%
+[receiver] warm ok=0/s bad=0 pkts=47191 lost=0 rtp=528.1 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=41%(1core) sys=23%
+[receiver] warm ok=0/s bad=0 pkts=59029 lost=0 rtp=660.6 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=44%(1core) sys=17%
+[receiver] warm ok=0/s bad=0 pkts=35063 lost=0 rtp=392.4 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=26%(1core) sys=16%
+[receiver] MEAS ok=3/s bad=0 pkts=40521 lost=0 rtp=453.5 Mb/s lat(pay->rx) med=13.54ms p95=13.57ms disp=0/s q=0 cpu=32%(1core) sys=16%
+[receiver] MEAS ok=40/s bad=0 pkts=44616 lost=0 rtp=499.3 Mb/s lat(pay->rx) med=13.57ms p95=20.08ms disp=0/s q=0 cpu=35%(1core) sys=21%
+[receiver] MEAS ok=33/s bad=0 pkts=37242 lost=0 rtp=416.8 Mb/s lat(pay->rx) med=13.56ms p95=18.37ms disp=0/s q=0 cpu=32%(1core) sys=19%
+[receiver] MEAS ok=31/s bad=0 pkts=34658 lost=0 rtp=387.9 Mb/s lat(pay->rx) med=13.56ms p95=31.58ms disp=0/s q=0 cpu=30%(1core) sys=16%
+[receiver] MEAS ok=30/s bad=0 pkts=34145 lost=0 rtp=382.1 Mb/s lat(pay->rx) med=13.54ms p95=14.15ms disp=0/s q=0 cpu=28%(1core) sys=18%
+[receiver] MEAS ok=32/s bad=0 pkts=35940 lost=0 rtp=402.2 Mb/s lat(pay->rx) med=13.53ms p95=14.41ms disp=0/s q=0 cpu=31%(1core) sys=19%
+[receiver] MEAS ok=34/s bad=0 pkts=39006 lost=0 rtp=436.5 Mb/s lat(pay->rx) med=13.53ms p95=14.05ms disp=0/s q=0 cpu=38%(1core) sys=18%
+[receiver] MEAS ok=37/s bad=0 pkts=41199 lost=0 rtp=461.1 Mb/s lat(pay->rx) med=13.65ms p95=18.96ms disp=0/s q=0 cpu=44%(1core) sys=23%
+[receiver] MEAS ok=46/s bad=0 pkts=53005 lost=0 rtp=593.2 Mb/s lat(pay->rx) med=13.59ms p95=16.78ms disp=0/s q=0 cpu=50%(1core) sys=19%
+[receiver] MEAS ok=33/s bad=0 pkts=36265 lost=0 rtp=405.8 Mb/s lat(pay->rx) med=13.54ms p95=14.21ms disp=0/s q=0 cpu=31%(1core) sys=17%
+[receiver] MEAS ok=30/s bad=0 pkts=33900 lost=0 rtp=379.4 Mb/s lat(pay->rx) med=13.52ms p95=14.05ms disp=0/s q=0 cpu=29%(1core) sys=17%
+[receiver] MEAS ok=34/s bad=0 pkts=38420 lost=0 rtp=430.0 Mb/s lat(pay->rx) med=13.52ms p95=15.35ms disp=0/s q=0 cpu=33%(1core) sys=19%
+[receiver] MEAS ok=31/s bad=0 pkts=36093 lost=0 rtp=403.9 Mb/s lat(pay->rx) med=13.53ms p95=13.72ms disp=0/s q=0 cpu=29%(1core) sys=17%
+[receiver] MEAS ok=37/s bad=0 pkts=41766 lost=0 rtp=467.4 Mb/s lat(pay->rx) med=13.54ms p95=14.39ms disp=0/s q=0 cpu=37%(1core) sys=18%
+[receiver] MEAS ok=37/s bad=0 pkts=41792 lost=0 rtp=467.7 Mb/s lat(pay->rx) med=13.53ms p95=14.27ms disp=0/s q=0 cpu=37%(1core) sys=19%
+[receiver] MEAS ok=38/s bad=0 pkts=41939 lost=0 rtp=469.3 Mb/s lat(pay->rx) med=13.57ms p95=14.80ms disp=0/s q=0 cpu=41%(1core) sys=24%
+[receiver] MEAS ok=34/s bad=0 pkts=38420 lost=0 rtp=430.0 Mb/s lat(pay->rx) med=13.55ms p95=14.74ms disp=0/s q=0 cpu=37%(1core) sys=20%
+[receiver] MEAS ok=34/s bad=0 pkts=38420 lost=0 rtp=430.0 Mb/s lat(pay->rx) med=13.54ms p95=14.26ms disp=0/s q=0 cpu=36%(1core) sys=18%
+[receiver] MEAS ok=34/s bad=0 pkts=39131 lost=0 rtp=437.9 Mb/s lat(pay->rx) med=13.53ms p95=14.17ms disp=0/s q=0 cpu=30%(1core) sys=15%
+[receiver] MEAS ok=35/s bad=0 pkts=38839 lost=0 rtp=434.6 Mb/s lat(pay->rx) med=13.57ms p95=14.85ms disp=0/s q=0 cpu=42%(1core) sys=20%
+[receiver] MEAS ok=35/s bad=0 pkts=39550 lost=0 rtp=442.6 Mb/s lat(pay->rx) med=13.53ms p95=13.82ms disp=0/s q=0 cpu=34%(1core) sys=17%
+[receiver] MEAS ok=37/s bad=0 pkts=42433 lost=0 rtp=474.9 Mb/s lat(pay->rx) med=13.53ms p95=14.39ms disp=0/s q=0 cpu=37%(1core) sys=23%
+[receiver] MEAS ok=37/s bad=0 pkts=41187 lost=0 rtp=460.9 Mb/s lat(pay->rx) med=13.54ms p95=13.80ms disp=0/s q=0 cpu=36%(1core) sys=18%
+[receiver] MEAS ok=34/s bad=0 pkts=38420 lost=0 rtp=430.0 Mb/s lat(pay->rx) med=13.52ms p95=14.38ms disp=0/s q=0 cpu=36%(1core) sys=19%
+[receiver] MEAS ok=35/s bad=0 pkts=39550 lost=0 rtp=442.6 Mb/s lat(pay->rx) med=13.55ms p95=17.99ms disp=0/s q=0 cpu=37%(1core) sys=17%
+[receiver] MEAS ok=36/s bad=0 pkts=40680 lost=0 rtp=455.3 Mb/s lat(pay->rx) med=13.56ms p95=16.21ms disp=0/s q=0 cpu=41%(1core) sys=21%
+[receiver] MEAS ok=30/s bad=0 pkts=33900 lost=0 rtp=379.4 Mb/s lat(pay->rx) med=13.53ms p95=13.70ms disp=0/s q=0 cpu=29%(1core) sys=16%
+[receiver] MEAS ok=32/s bad=0 pkts=36160 lost=0 rtp=404.7 Mb/s lat(pay->rx) med=13.54ms p95=13.70ms disp=0/s q=0 cpu=31%(1core) sys=17%
+[receiver] MEAS ok=32/s bad=0 pkts=36160 lost=0 rtp=404.7 Mb/s lat(pay->rx) med=13.54ms p95=13.75ms disp=0/s q=0 cpu=29%(1core) sys=16%
+[receiver] MEAS ok=31/s bad=0 pkts=35630 lost=0 rtp=398.7 Mb/s lat(pay->rx) med=13.58ms p95=15.43ms disp=0/s q=0 cpu=37%(1core) sys=19%
+[receiver] MEAS ok=29/s bad=0 pkts=32170 lost=0 rtp=360.0 Mb/s lat(pay->rx) med=13.57ms p95=13.81ms disp=0/s q=0 cpu=28%(1core) sys=14%
+[receiver] MEAS ok=0/s bad=0 pkts=0 lost=0 rtp=0.0 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=0%(1core) sys=8%
+[receiver] SUMMARY expected=1031 ok=1031 corrupted=0 incomplete=0 never_arrived=0 rx_dropped=0 dup=0 stamp_bad=0 unknown=0 | ok fps=34.37 | pkts=1395550 lost=0 | pay->complete med=13.54 p95=15.12 ms (sync ±0.401) | decode med=0.00 p95=0.00 ms | cpu=35%(1core) sys=18%

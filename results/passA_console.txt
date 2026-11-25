@@ -1,0 +1,22 @@
+Pass A: 3 modes x 3 samples x (5+30) s ~ 7 min
+== A1-pattern-960x540p60-raw sample 1/3: raw pattern 960x540@60, 5s warm-up + 30s
+   sent 60.10 fps, ok 1803/1803 (60.10 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.540 p95 15.011 ms, udp rcvbuf err +0, temp 58.7->60.4C throttled 0x0
+== A1-pattern-960x540p60-raw sample 2/3: raw pattern 960x540@60, 5s warm-up + 30s
+   sent 60.03 fps, ok 1801/1801 (60.03 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.573 p95 18.328 ms, udp rcvbuf err +0, temp 59.3->63.1C throttled 0x0
+== A1-pattern-960x540p60-raw sample 3/3: raw pattern 960x540@60, 5s warm-up + 30s
+   sent 60.07 fps, ok 1802/1802 (60.07 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.531 p95 14.771 ms, udp rcvbuf err +0, temp 60.4->62.6C throttled 0x0
+results in results\20261124-203353_A1-pattern-960x540p60-raw
+== A2-desktop-test-960x540p60-raw sample 1/3: raw desktop 960x540@60, 5s warm-up + 30s
+   sent 51.60 fps, ok 1548/1548 (51.60 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.563 p95 15.493 ms, udp rcvbuf err +0, temp 62.0->62.6C throttled 0x0
+== A2-desktop-test-960x540p60-raw sample 2/3: raw desktop 960x540@60, 5s warm-up + 30s
+   sent 52.03 fps, ok 1561/1561 (52.03 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.539 p95 15.246 ms, udp rcvbuf err +0, temp 62.0->61.5C throttled 0x0
+== A2-desktop-test-960x540p60-raw sample 3/3: raw desktop 960x540@60, 5s warm-up + 30s
+   sent 52.97 fps, ok 1589/1589 (52.97 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.550 p95 15.168 ms, udp rcvbuf err +0, temp 61.5->62.6C throttled 0x0
+results in results\20261124-203612_A2-desktop-test-960x540p60-raw
+== A3-desktop-idle-960x540p60-raw sample 1/3: raw desktop 960x540@60, 5s warm-up + 30s
+   sent 22.77 fps, ok 683/683 (22.77 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.558 p95 14.571 ms, udp rcvbuf err +0, temp 61.5->60.9C throttled 0x0
+== A3-desktop-idle-960x540p60-raw sample 2/3: raw desktop 960x540@60, 5s warm-up + 30s
+   sent 34.37 fps, ok 1031/1031 (34.37 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.542 p95 15.123 ms, udp rcvbuf err +0, temp 59.8->60.4C throttled 0x0
+== A3-desktop-idle-960x540p60-raw sample 3/3: raw desktop 960x540@60, 5s warm-up + 30s
+   sent 34.63 fps, ok 1039/1039 (34.63 fps), corrupt 0, incomplete 0, never 0, rxdrop 0, lost pkts 0, pay->rx med 13.556 p95 14.868 ms, udp rcvbuf err +0, temp 60.9->60.9C throttled 0x0
+results in results\20261124-203832_A3-desktop-idle-960x540p60-raw

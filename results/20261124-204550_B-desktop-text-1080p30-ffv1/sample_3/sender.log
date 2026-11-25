@@ -1,0 +1,38 @@
+[sender] desktop monitor //./DISPLAY1 via dxgi | codec=ffv1 1920x1080@30 -> 10.77.0.2:5004 (bind 10.77.0.1)
+[sender] pipeline: d3d11screencapturesrc name=cap monitor-handle=131162 show-cursor=true capture-api=dxgi ! video/x-raw(memory:D3D11Memory),framerate=30/1 ! d3d11convert ! video/x-raw(memory:D3D11Memory),format=RGBA,width=1920,height=1080,pixel-aspect-ratio=1/1 ! d3d11download ! videoconvert n-threads=4 ! videoscale ! capsfilter name=fmt caps="video/x-raw,format=RGB,width=1920,height=1080,framerate=30/1,pixel-aspect-ratio=1/1" ! tee name=t t. ! queue name=sq leaky=downstream max-size-buffers=2 max-size-bytes=0 max-size-time=0 ! videoconvert name=qout ! video/x-raw,format=BGRx ! avenc_ffv1 name=enc gop-size=1 context=0 thread-type=slice slicecrc=on coder=rice slices=16 threads=0 ! rtpgstpay name=pay config-interval=1 mtu=1400 ! udpsink name=net host=10.77.0.2 port=5004 sync=false async=false qos=false buffer-size=2097152 bind-address=10.77.0.1
+[sender] warm in=31/s sent=29/s qdrop=1 rtp=293.3 Mb/s cpu=371%(1core) sys=36% sync=±0.218ms rtt=0.396ms
+[sender] warm in=30/s sent=31/s qdrop=0 rtp=313.0 Mb/s cpu=258%(1core) sys=39% sync=±0.278ms rtt=0.377ms
+[sender] warm in=31/s sent=31/s qdrop=0 rtp=313.9 Mb/s cpu=348%(1core) sys=41% sync=±0.336ms rtt=0.377ms
+[sender] warm in=30/s sent=30/s qdrop=0 rtp=299.0 Mb/s cpu=245%(1core) sys=29% sync=±0.273ms rtt=0.356ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=296.9 Mb/s cpu=60%(1core) sys=22% sync=±0.281ms rtt=0.356ms
+[sender] MEAS in=29/s sent=29/s qdrop=0 rtp=285.9 Mb/s cpu=201%(1core) sys=30% sync=±0.276ms rtt=0.356ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=294.9 Mb/s cpu=194%(1core) sys=27% sync=±0.416ms rtt=0.356ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=283.6 Mb/s cpu=107%(1core) sys=30% sync=±0.314ms rtt=0.356ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=283.2 Mb/s cpu=122%(1core) sys=22% sync=±0.315ms rtt=0.356ms
+[sender] MEAS in=30/s sent=29/s qdrop=0 rtp=276.5 Mb/s cpu=283%(1core) sys=27% sync=±0.322ms rtt=0.356ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=284.5 Mb/s cpu=58%(1core) sys=19% sync=±0.327ms rtt=0.356ms
+[sender] MEAS in=29/s sent=30/s qdrop=0 rtp=287.1 Mb/s cpu=297%(1core) sys=30% sync=±0.330ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=282.1 Mb/s cpu=138%(1core) sys=21% sync=±0.334ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=281.8 Mb/s cpu=69%(1core) sys=21% sync=±0.333ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=284.3 Mb/s cpu=64%(1core) sys=28% sync=±0.337ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=284.8 Mb/s cpu=49%(1core) sys=19% sync=±0.336ms rtt=0.320ms
+[sender] MEAS in=32/s sent=32/s qdrop=0 rtp=301.5 Mb/s cpu=179%(1core) sys=28% sync=±0.342ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=280.5 Mb/s cpu=169%(1core) sys=24% sync=±0.332ms rtt=0.320ms
+[sender] MEAS in=29/s sent=29/s qdrop=0 rtp=276.3 Mb/s cpu=121%(1core) sys=30% sync=±0.332ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=289.7 Mb/s cpu=226%(1core) sys=35% sync=±0.328ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=294.2 Mb/s cpu=119%(1core) sys=45% sync=±0.331ms rtt=0.320ms
+[sender] MEAS in=30/s sent=29/s qdrop=0 rtp=285.5 Mb/s cpu=342%(1core) sys=36% sync=±0.329ms rtt=0.320ms
+[sender] MEAS in=29/s sent=30/s qdrop=0 rtp=296.8 Mb/s cpu=114%(1core) sys=26% sync=±0.487ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=304.7 Mb/s cpu=488%(1core) sys=44% sync=±0.327ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=301.7 Mb/s cpu=107%(1core) sys=25% sync=±0.326ms rtt=0.320ms
+[sender] MEAS in=32/s sent=32/s qdrop=0 rtp=321.8 Mb/s cpu=218%(1core) sys=38% sync=±0.352ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=303.3 Mb/s cpu=439%(1core) sys=42% sync=±0.324ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=303.7 Mb/s cpu=227%(1core) sys=27% sync=±0.336ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=302.9 Mb/s cpu=91%(1core) sys=23% sync=±0.330ms rtt=0.320ms
+[sender] MEAS in=29/s sent=29/s qdrop=0 rtp=291.4 Mb/s cpu=57%(1core) sys=22% sync=±0.318ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=299.0 Mb/s cpu=267%(1core) sys=30% sync=±0.317ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=296.0 Mb/s cpu=136%(1core) sys=32% sync=±0.316ms rtt=0.320ms
+[sender] MEAS in=30/s sent=30/s qdrop=0 rtp=296.8 Mb/s cpu=142%(1core) sys=26% sync=±0.315ms rtt=0.320ms
+[sender] MEAS in=30/s sent=29/s qdrop=0 rtp=282.1 Mb/s cpu=371%(1core) sys=34% sync=±0.445ms rtt=0.320ms
+[sender] MEAS in=30/s sent=31/s qdrop=0 rtp=291.0 Mb/s cpu=76%(1core) sys=23% sync=±0.336ms rtt=0.320ms
+[sender] SUMMARY measured 30s: stamped=901 sent=901 (30.03 fps) queue_drops=0 payload=288.1 Mb/s rtp=292.2 Mb/s wire~306.0 Mb/s encode/queue->pay med=8.60ms p95=10.48ms cpu=138%(1core) sync_unc=±0.338ms drift=-4.75ppm

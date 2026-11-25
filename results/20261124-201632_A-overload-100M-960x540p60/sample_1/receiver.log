@@ -1,0 +1,20 @@
+[receiver] mode=raw path=app 960x540@60 bind=192.168.88.226:5004 display=none
+[receiver] pipeline: udpsrc name=src port=5004 buffer-size=33554432 do-timestamp=true address=192.168.88.226 caps=application/x-rtp ! appsink name=rtpsink sync=false async=false emit-signals=false max-buffers=0 drop=false
+
+[receiver] warm ok=0/s bad=0 pkts=0 lost=0 rtp=0.0 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=0%(1core) sys=10%
+[receiver] warm ok=0/s bad=0 pkts=5507 lost=0 rtp=61.6 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=5%(1core) sys=7%
+[receiver] warm ok=0/s bad=0 pkts=8558 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=8%(1core) sys=8%
+[receiver] warm ok=0/s bad=0 pkts=8559 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=10%(1core) sys=14%
+[receiver] warm ok=0/s bad=0 pkts=8559 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=0.00ms p95=0.00ms disp=0/s q=0 cpu=8%(1core) sys=10%
+[receiver] MEAS ok=6/s bad=0 pkts=8557 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=835.28ms p95=835.50ms disp=0/s q=0 cpu=9%(1core) sys=11%
+[receiver] MEAS ok=7/s bad=0 pkts=8368 lost=0 rtp=93.7 Mb/s lat(pay->rx) med=837.25ms p95=837.59ms disp=0/s q=0 cpu=9%(1core) sys=11%
+[receiver] MEAS ok=8/s bad=0 pkts=8560 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=835.41ms p95=837.57ms disp=0/s q=0 cpu=9%(1core) sys=14%
+[receiver] MEAS ok=7/s bad=0 pkts=8557 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=835.37ms p95=835.63ms disp=0/s q=0 cpu=9%(1core) sys=11%
+[receiver] MEAS ok=8/s bad=0 pkts=8565 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=835.27ms p95=835.56ms disp=0/s q=0 cpu=11%(1core) sys=16%
+[receiver] MEAS ok=7/s bad=0 pkts=8558 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=835.41ms p95=835.51ms disp=0/s q=0 cpu=8%(1core) sys=8%
+[receiver] MEAS ok=8/s bad=0 pkts=8560 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=835.12ms p95=835.43ms disp=0/s q=0 cpu=10%(1core) sys=11%
+[receiver] MEAS ok=7/s bad=0 pkts=8386 lost=0 rtp=93.9 Mb/s lat(pay->rx) med=835.22ms p95=835.39ms disp=0/s q=0 cpu=8%(1core) sys=8%
+[receiver] MEAS ok=8/s bad=0 pkts=8558 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=484.07ms p95=484.33ms disp=0/s q=0 cpu=9%(1core) sys=10%
+[receiver] MEAS ok=8/s bad=0 pkts=8561 lost=0 rtp=95.8 Mb/s lat(pay->rx) med=484.01ms p95=484.22ms disp=0/s q=0 cpu=9%(1core) sys=10%
+[receiver] MEAS ok=1/s bad=0 pkts=1967 lost=0 rtp=22.0 Mb/s lat(pay->rx) med=483.82ms p95=483.82ms disp=0/s q=0 cpu=3%(1core) sys=17%
+[receiver] SUMMARY expected=76 ok=75 corrupted=0 incomplete=1 never_arrived=0 rx_dropped=0 dup=0 stamp_bad=0 unknown=0 | ok fps=7.50 | pkts=118380 lost=0 | pay->complete med=835.22 p95=837.31 ms (sync ±352.157) | decode med=0.00 p95=0.00 ms | cpu=9%(1core) sys=11%
